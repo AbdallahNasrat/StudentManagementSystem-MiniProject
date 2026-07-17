@@ -21,7 +21,6 @@ namespace CSharp_Fundamentals____Student_Management_System_Mini_Project_
                     Grade = grade
                 };
                 school.Students.Add(student);
-                school.CountOfStudents++;
                 return true;
             }
             catch (Exception ex)
@@ -43,8 +42,7 @@ namespace CSharp_Fundamentals____Student_Management_System_Mini_Project_
                 }
                 if (student != null)
                 {
-                    school.Students.Remove(student);
-                    school.CountOfStudents--;
+                    school.Students.Remove(student);                   
                     return true;
                 }
                 else
@@ -81,25 +79,15 @@ namespace CSharp_Fundamentals____Student_Management_System_Mini_Project_
         }
         public List<Student> GetAllStudents(School school)
         {
-            if (school.Students.Count != 0)
+            if (school.Students.Count != 0 && school !=null)
             {
-                var list = new List<Student>();
-                foreach (Student s in school.Students)
-                {
-                    list.Add(s);
-                    //Console.WriteLine($"Student From {school.Name} :");
-                    //Console.WriteLine($"Id: {s.Id}  - Name: {s.Name}  - Age: {s.Age}  - Grade: {s.Grade} \n");
-                }
-                return list;
 
+                return school.Students;
             }
             else
             {
                 return [];
             }
-
-            //}
-            //public Student GetStudent(int id) { }
 
         }
         public int CountOfStudents(School school) {
@@ -131,9 +119,7 @@ namespace CSharp_Fundamentals____Student_Management_System_Mini_Project_
                         if (student.Id == id)
                         {
                             return student;
-                        }
-                        else
-                            return null;
+                        }                       
                     }
                     
                 }
