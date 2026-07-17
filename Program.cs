@@ -196,7 +196,7 @@ namespace CSharp_Fundamentals____Student_Management_System_Mini_Project_
                                 if (isExist)
                                     Console.WriteLine($"the student with id : {id} is exist");
                                 else
-                                    Console.WriteLine("the student with id : {id} is not exist");
+                                    Console.WriteLine($"the student with id : {id} is not exist");
                             }
                             catch (Exception ex) {
                                 Console.WriteLine(ex.Message);
